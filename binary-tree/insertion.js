@@ -17,7 +17,7 @@ function insertData(root, key) {
     const queue = [root];
     while (queue.length > 0) {
 
-        // Takes out the first element from the queue and returns it
+        // Takes out the first element from the queue and return it
         const currentNode = queue.shift();
 
         // If the left child of currentNode is null, add data there
