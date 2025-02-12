@@ -30,8 +30,17 @@ This is returned in the end so that when the recursion is passed to the previous
 ### Code
 ```
 function maxDepth(root) {
+    
+    // Base condition
     if (root === null) return 0;
-    let leftHeight = maxDepth(root.left)
- }
 
+    // Calculate depth of the left subtree
+    let leftHeight = maxDepth(root.left)
+
+    // Calculate depth of the right subtree
+    let rightHeight = maxDepth(root.right)
+
+    // Returns the depth at each node
+    return 1 + Math.max(leftHeight, rightHeight)
+ }
 ```
