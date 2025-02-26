@@ -1,8 +1,11 @@
+## Path sum
+
+### Question
 Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
 
 A leaf is a node with no children.
 
-
+### Examples
 Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
 Output: true
 Explanation: The root-to-leaf path with the target sum is shown.
@@ -21,9 +24,19 @@ Explanation: Since the tree is empty, there are no root-to-leaf paths.
 
 
 
-Algorithm:
+### Algorithm:
 1. We use DFS traversal to calculate the sum
 2. If the current node is null, return false
 3. If the current node is a leaf node and the value is equal to the target sum, return true
 4. Recursively check the left subtree and the right subtree for the desired sum
 5. The target sum is updated on every iteration of the traversal
+
+
+### Code
+```
+function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
+    if (root === null) return false
+    if(root.right === null && root.left === null && root.val === targetSum) return true
+    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val)
+ };
+```
