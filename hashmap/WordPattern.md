@@ -35,7 +35,7 @@ Output: false
 
 
 ### Algorithm
-1. Split the `string` into slice of individual words (`strings.Split(string)`) Check that both parameters(`pattern` and the `string`) have same length. If not, return false.
+1. Split the `string` into slice of individual words (`strings.Split(string)`) and check that both parameters(`pattern` and the `string`) have same length. If not, return false.
 2. Use 2 different maps
 3. One for storing the the characters from `pattern` as key and the correspinding data in `s`.
 4. The other one stores the characters from `s` as key the corresponding index character `pattern`.
